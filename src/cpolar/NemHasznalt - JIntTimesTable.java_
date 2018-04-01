@@ -1,0 +1,74 @@
+package cpolar;
+// JIntTimesTable.java
+// A JDiagramParam-hoz hozzaadva tartalmazza az intervallumok adatait
+
+//import java.awt.Component;
+// import javax.swing.*;
+//import javax.swing.DebugGraphics;
+import javax.swing.JComponent ;
+import javax.swing.JTable;
+//import javax.swing.table.TableColumn;
+
+//import javax.swing.table.AbstractTableModel;
+
+// public class JIntvAdatTblModel extends AbstractTableModel
+
+//public class JIntTimesTable extends JScrollPane
+
+************************************************************************************************************************
+* EZ AZ OSZTALY NINCS HASZNALVA !                                                                                      *
+************************************************************************************************************************
+
+public class JIntTimesTable extends JComponent
+{
+  /** Sajatkezuleg generalt Serialized Version UID */
+  static final long serialVersionUID = 1654165632156431511L ;
+  
+  protected JIntvAdatTblModel m_jIntAdatTblModel = null ;
+  protected JTable           m_jIntAdatTbl      = null ;
+//  JScrollPane      m_jIntAdatTblGorditosav = null ;
+
+  public JIntTimesTable()
+  {
+    super();
+
+//    JTextField jTextField  = null ;
+//    JComboBox  jComboBox   = null ;
+//    TableColumn jAktOszlop = null ;
+//    int    nIdx = 0 ;
+
+    m_jIntAdatTblModel = new JIntvAdatTblModel() ; <- JParamValPanel  parametert fogyasztana
+    m_jIntAdatTbl      = new JTable( m_jIntAdatTblModel) ;
+//    jTextField         = new JTextField() ;
+//    jComboBox          = new JComboBox() ;
+    
+    m_jIntAdatTbl.setRowHeight( 20) ;
+    
+//    m_jIntAdatTbl.repaint() ;
+    
+//    for ( nIdx = 0 ; nIdx < m_jIntAdatTbl.getColumnCount() ; nIdx++ )
+//    {
+      // getColumnName(int column) ???
+//      jAktOszlop = m_jIntAdatTbl.getColumn( "A") ; // JTable::getColumn()
+//      jAktOszlop = m_jIntAdatTbl.getColumn( Integer.toString( nIdx)) ; // JTable::getColumn()
+      
+//      jAktOszlop.setCellEditor( new DefaultCellEditor( jTextField)) ;
+      // JCheckBox / JComboBox / JTextField lehet csak \/ 
+//      jAktOszlop.setCellEditor( new DefaultCellEditor( jTextField)) ;
+//    }
+    
+    // A tabla JScrollPane-hez valo hozzaadasa
+//    setViewportView( m_jIntAdatTbl);
+    
+//    setDebugGraphicsOptions( DebugGraphics.BUFFERED_OPTION | DebugGraphics.FLASH_OPTION /* | DebugGraphics.LOG_OPTION  */);    
+//System.out.println( "JParamValPanel::setDebugGraphicsOptions()") ;
+
+  }
+  
+  public void Frissit()
+  {
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+System.out.println( "JIntTimesTable::Frissit(): " + m_jIntAdatTbl.getColumnCount() + ":" + m_jIntAdatTbl.getRowCount()) ;
+    m_jIntAdatTbl.repaint() ;
+  }
+}
